@@ -3,10 +3,10 @@ package com.imindloop.springdependencyinjection.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GreetingServiceEnglish implements GreetingService {
+public class GreetingServiceItalian implements GreetingService{
 
     @Override
     public String sayGreeting() {
-        return "Hi in English!";
+        return "Ciao in Italian.";
     }
 }
