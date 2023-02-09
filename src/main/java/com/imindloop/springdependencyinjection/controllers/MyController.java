@@ -1,15 +1,19 @@
 package com.imindloop.springdependencyinjection.controllers;
 
+import com.imindloop.springdependencyinjection.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
+    private final GreetingService greetingService;
+
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
     public String sayHello() {
-
-        System.out.println("From inside the sayHello() method.");
-
-        return "Hello from MyController.sayHello()";
+        return greetingService.sayGreeting();
     }
 
 }

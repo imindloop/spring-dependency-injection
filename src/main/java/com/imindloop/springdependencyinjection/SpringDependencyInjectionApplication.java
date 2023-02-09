@@ -36,6 +36,8 @@ public class SpringDependencyInjectionApplication {
 		System.out.println(controllerWithConstructorBasedInjection.getGreeting());
 		System.out.println("########## End Constructor Based ########################");
 
+		System.out.println(instanceOfMyController.sayHello());
+
 
 	}
 
