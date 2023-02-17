@@ -1,9 +1,6 @@
 package com.imindloop.springdependencyinjection;
 
-import com.imindloop.springdependencyinjection.controllers.ControllerWithConstructorBasedInjection;
-import com.imindloop.springdependencyinjection.controllers.ControllerWithPropertyBasedInjection;
-import com.imindloop.springdependencyinjection.controllers.ControllerWithSetterBasedInjection;
-import com.imindloop.springdependencyinjection.controllers.MyController;
+import com.imindloop.springdependencyinjection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,10 @@ public class SpringDependencyInjectionApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SpringDependencyInjectionApplication.class, args);
 		MyController instanceOfMyController = (MyController) context.getBean("myController");
+
+
+		I18nController i18nController = (I18nController) context.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("########## Start Property Based ########################");
 		ControllerWithPropertyBasedInjection controllerWithPropertyBasedInjection =
@@ -37,6 +38,8 @@ public class SpringDependencyInjectionApplication {
 		System.out.println("########## End Constructor Based ########################");
 
 		System.out.println(instanceOfMyController.sayHello());
+
+
 
 
 	}
